@@ -1,0 +1,20 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//unpkg.com/3d-force-graph-vr"></script>
+  <!--<script src="../../dist/3d-force-graph-vr.js"></script>-->
+</head>
+
+<body>
+
+  <div id="3d-graph"></div>
+
+  <script>
+    const elem = document.getElementById('3d-graph');
+
+    const Graph = ForceGraphVR()(elem)
+      .jsonUrl('../datasets/blocks.json')
+      .nodeAutoColorBy('user')
+      .nodeLabel(node => `${node.user}: ${node.description}`);
+  </script>
+</body>
